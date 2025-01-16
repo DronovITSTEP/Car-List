@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp">
+
+    <ImageView
+        android:id="@+id/image_car"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/ic_launcher_background"/>
+
+    <TextView
+        android:id="@+id/brand_model_car"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="brand, model"
+        app:layout_constraintStart_toEndOf="@+id/image_car"
+        app:layout_constraintTop_toTopOf="@+id/image_car"
+        android:layout_marginStart="10dp"/>
+
+    <TextView
+        android:id="@+id/description_car"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="description"
+        android:layout_marginStart="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/image_car"
+        app:layout_constraintStart_toEndOf="@+id/image_car"
+        app:layout_constraintTop_toBottomOf="@+id/brand_model_car" />
+
+    <TextView
+        android:id="@+id/cost_car"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="cost"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

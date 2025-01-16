@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SearchCarActivity"
+    android:layout_margin="10dp">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="?attr/actionBarPopupTheme" />
+
+
+    <AutoCompleteTextView
+        android:id="@+id/input_brand"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_brand"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <AutoCompleteTextView
+        android:id="@+id/input_model"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_model"
+        app:layout_constraintTop_toBottomOf="@+id/input_brand" />
+
+    <TextView
+        android:id="@+id/year_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="year from"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_model" />
+
+    <Spinner
+        android:id="@+id/spinnerStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/to_text"
+        app:layout_constraintStart_toEndOf="@id/year_text"
+        app:layout_constraintTop_toBottomOf="@id/input_model" />
+
+    <TextView
+        android:id="@+id/to_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="to"
+        app:layout_constraintEnd_toStartOf="@+id/spinnerEnd"
+
+        app:layout_constraintTop_toBottomOf="@+id/input_model" />
+
+    <Spinner
+        android:id="@+id/spinnerEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintTop_toBottomOf="@id/input_model" />
+
+    <TextView
+        android:id="@+id/cost_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="cost from"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/year_text" />
+
+    <Spinner
+        android:id="@+id/spinnerStart2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/to_text2"
+        app:layout_constraintStart_toEndOf="@id/cost_text"
+        app:layout_constraintTop_toBottomOf="@id/spinnerStart" />
+
+    <TextView
+        android:id="@+id/to_text2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="to"
+        app:layout_constraintEnd_toStartOf="@+id/spinnerEnd2"
+
+        app:layout_constraintTop_toBottomOf="@+id/spinnerEnd" />
+
+    <Spinner
+        android:id="@+id/spinnerEnd2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintTop_toBottomOf="@id/spinnerEnd" />
+
+    <Button
+        android:id="@+id/matches_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="matches (12)"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="25dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

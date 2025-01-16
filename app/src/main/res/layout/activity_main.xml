@@ -17,14 +17,9 @@
         android:theme="?attr/actionBarTheme"
         app:popupTheme="?attr/actionBarPopupTheme"/>
 
-    <TextView
-        android:id="@+id/car_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-    <ImageView
-        android:id="@+id/car_image"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
-        android:src="@drawable/ic_launcher_background"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerCar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
 </LinearLayout>

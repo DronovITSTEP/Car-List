@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">SaleCar</string>
     <string name="toolbar_name">Car List</string>
+    <string name="toolbar_search_name">Search Car</string>
     <string name="menu_item_search">Search</string>
+    <string name="hint_brand">Жигули</string>
+    <string name="hint_model">шоха</string>
 
 </resources>
