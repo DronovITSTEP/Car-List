@@ -1,10 +1,14 @@
 package entity;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "cars")
-public class Car {
+public class Car implements Parcelable {
     @PrimaryKey(autoGenerate = true)
     private int id;
     private String brand; // - Марка авто
@@ -13,6 +17,16 @@ public class Car {
     private String description; // - Произвольное описание от продавца автомобиля
     private float cost; // - Стоимость авто
     private int imageCarId; // Фото автомобилей
+
+    protected Car(Parcel in) {
+        id = in.readInt();
+        brand = in.readString();
+        model = in.readString();
+        year = in.readInt();
+        cost = in.readFloat();
+        description = in.readString();
+        imageCarId = in.readInt();
+    }
 
     public Car(int imageCarId, float cost, String description, int year, String model, String brand) {
         this.imageCarId = imageCarId;
@@ -77,5 +91,33 @@ public class Car {
 
     public void setImageCarId(int imageCarId) {
         this.imageCarId = imageCarId;
+    }
+
+    public static final Creator<Car> CREATOR = new Creator<Car>() {
+        @Override
+        public Car createFromParcel(Parcel source) {
+            return new Car(source);
+        }
+
+        @Override
+        public Car[] newArray(int size) {
+            return new Car[size];
+        }
+    };
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(@NonNull Parcel dest, int flags) {
+        dest.writeInt(id);
+        dest.writeString(brand);
+        dest.writeString(model);
+        dest.writeInt(year);
+        dest.writeFloat(cost);
+        dest.writeString(description);
+        dest.writeInt(imageCarId);
     }
 }

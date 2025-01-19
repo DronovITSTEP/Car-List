@@ -57,6 +57,10 @@ public class MainActivity extends AppCompatActivity {
 
         carList = db.carDao().getAllCars();
 
+        if (getIntent().hasExtra("filteredCars")) {
+            carList = getIntent().getParcelableArrayListExtra("filteredCars");
+        }
+
         adapter = new CarAdapter(carList);
 
         recyclerCar = findViewById(R.id.recyclerCar);
